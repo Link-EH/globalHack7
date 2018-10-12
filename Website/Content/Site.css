@@ -22,3 +22,13 @@ select,
 textarea {
     max-width: 280px;
 }
+html{
+    margin-top: 3em;
+}
+.navbar .navbar-brand{
+    font-size: 2em;
+}
+.navbar ::placeholder,
+.body-content ::placeholder{
+    opacity: 0.5;
+}
