@@ -210,6 +210,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BusinessProfileController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\JobSkillController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -222,7 +223,10 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BusinessProfile.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\JobSkill.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\SkillCategory.cs" />
+    <Compile Include="Models\SkillType.cs" />
     <Compile Include="Models\EmploymentDatabase.cs" />
     <Compile Include="Models\Resume.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -289,11 +293,6 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
-    <Content Include="Views\BusinessProfile\Create.cshtml" />
-    <Content Include="Views\BusinessProfile\Delete.cshtml" />
-    <Content Include="Views\BusinessProfile\Details.cshtml" />
-    <Content Include="Views\BusinessProfile\Edit.cshtml" />
-    <Content Include="Views\BusinessProfile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
