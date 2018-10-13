@@ -28,12 +28,15 @@ namespace Website.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Resume resume = db.Resumes.Find(id);
-            if (resume == null)
+            WorkResults workResults = new WorkResults();
+            workResults.Resume = db.Resumes.Find(id);
+            if (workResults.Resume == null)
             {
                 return HttpNotFound();
             }
-            return View(resume);
+            List<WorkExperience> workExperiences = db.WorkExperiences.Where(x => x.ResumeId == id).ToList();
+            workResults.WorkExperiences = workExperiences;
+            return View(workResults);
         }
 
         // GET: Resume/Create
