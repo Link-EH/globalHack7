@@ -232,6 +232,14 @@
     <Compile Include="Migrations\201810131813190_Added data constrants to Resume.Designer.cs">
       <DependentUpon>201810131813190_Added data constrants to Resume.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810131847024_Added WorkExperience Table.cs" />
+    <Compile Include="Migrations\201810131847024_Added WorkExperience Table.Designer.cs">
+      <DependentUpon>201810131847024_Added WorkExperience Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810131852181_Added Foreign Key Resume to WorkExperiences.cs" />
+    <Compile Include="Migrations\201810131852181_Added Foreign Key Resume to WorkExperiences.Designer.cs">
+      <DependentUpon>201810131852181_Added Foreign Key Resume to WorkExperiences.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BusinessProfile.cs" />
@@ -341,6 +349,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810131813190_Added data constrants to Resume.resx">
       <DependentUpon>201810131813190_Added data constrants to Resume.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810131847024_Added WorkExperience Table.resx">
+      <DependentUpon>201810131847024_Added WorkExperience Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810131852181_Added Foreign Key Resume to WorkExperiences.resx">
+      <DependentUpon>201810131852181_Added Foreign Key Resume to WorkExperiences.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

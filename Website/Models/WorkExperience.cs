@@ -7,25 +7,33 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Website.Models
 {
-    [Table("WorkExperience")]
+    [Table("WorkExperiences")]
     public class WorkExperience
     {
-        [Key, Display(Name = "#")]
+        [Key]
+        public Guid WorkExperienceId { get; set; }
+
+        [Display(Name = "#")]
         public Guid ResumeId { get; set; }
         
-        [Key, Display(Name = "Work Name")]
-        [StringLength(60)]
-        public string WorkName { get; set; }
+        [Display(Name = "Business Name")]
+        [StringLength(100)]
+        public string BusinessName { get; set; }
 
-        [Key, Display(Name = "Start date")]
+        [Display(Name = "Start date")]
         [DataType(DataType.Date)]
-        public DateTime StartDate { get; set; }
+        public DateTime? StartDate { get; set; }
 
         [Display(Name = "End date")]
         [DataType(DataType.Date)]
-        public DateTime EndDate { get; set; }
+        public DateTime? EndDate { get; set; }
 
-        [Display(Name = "Work Description")]
-        public string WorkDescription { get; set; }
+        [Display(Name = "Job Title")]
+        [StringLength(100)]
+        public string JobTitle { get; set; }
+
+        [Display(Name = "Description")]
+        [DataType(DataType.MultilineText)]
+        public string Description { get; set; }
     }
 }

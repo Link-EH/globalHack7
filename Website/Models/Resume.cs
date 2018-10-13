@@ -33,5 +33,7 @@ namespace Website.Models
         [DataType(DataType.EmailAddress)]
         [StringLength(70)]
         public string Email { get; set; }
+
+        public virtual ICollection<WorkExperience> WorkExperiences { get; set; }
     }
 }
