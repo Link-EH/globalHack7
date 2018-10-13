@@ -19,11 +19,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Industry)
+            @Html.DisplayNameFor(model => model.Industry.IndustryName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Industry)
+            @Html.DisplayFor(model => model.Industry.IndustryName)
         </dd>
 
         <dt>
@@ -93,7 +93,29 @@
             </dd>
         }
 
+        <dt>
+            Location
+        </dt>
+        <dd>
+            @{ 
+                var fullAddress = new System.Text.StringBuilder();
 
+                fullAddress.Append(Model.StreetAddress);
+                fullAddress.Append(",");
+                fullAddress.Append(Model.City);
+                fullAddress.Append(",");
+                fullAddress.Append(Model.State);
+                fullAddress.Append(",US");
+            }
+            <iframe width="600" 
+                    height="450" 
+                    frameborder="0"
+                    style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCttMNhWa1uq1jdmKjjyw0XWmw_J0eCqKA&q=@Url.Encode(fullAddress.ToString())"
+                    Viewbag.Location
+                    allowfullscreen
+                    id="map"></iframe>
+        </dd>
     </dl>
 </div>
 <p>

@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using Website.Models;
@@ -80,6 +81,7 @@ namespace Website.Controllers
             {
                 return HttpNotFound();
             }
+            
             return View(businessProfile);
         }
 

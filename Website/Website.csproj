@@ -261,6 +261,10 @@
     <Compile Include="Migrations\201810132222573_rename language and ethnicity.Designer.cs">
       <DependentUpon>201810132222573_rename language and ethnicity.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810132301305_fixed IndustryId field showing up on create, delete, detail, and edit.cs" />
+    <Compile Include="Migrations\201810132301305_fixed IndustryId field showing up on create, delete, detail, and edit.Designer.cs">
+      <DependentUpon>201810132301305_fixed IndustryId field showing up on create, delete, detail, and edit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BusinessProfile.cs" />
@@ -417,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810132222573_rename language and ethnicity.resx">
       <DependentUpon>201810132222573_rename language and ethnicity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810132301305_fixed IndustryId field showing up on create, delete, detail, and edit.resx">
+      <DependentUpon>201810132301305_fixed IndustryId field showing up on create, delete, detail, and edit.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
