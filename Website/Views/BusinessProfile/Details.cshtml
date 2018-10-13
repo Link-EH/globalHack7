@@ -93,7 +93,22 @@
             </dd>
         }
 
-
+        <dt>
+            Location
+        </dt>
+        <dd>
+            <iframe width="600" 
+                    height="450" 
+                    frameborder="0"
+                    style="border:0"
+                    Viewbag.Location
+                    allowfullscreen
+                    id="map"></iframe>
+            <script>
+                $("#map").attr("src",
+                    "https://www.google.com/maps/embed/v1/place?key=AIzaSyCttMNhWa1uq1jdmKjjyw0XWmw_J0eCqKA" + @ViewBag.map);
+            </script>
+        </dd>
     </dl>
 </div>
 <p>
