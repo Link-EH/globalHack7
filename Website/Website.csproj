@@ -215,8 +215,10 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BusinessProfileController.cs" />
+    <Compile Include="Controllers\EthnicityController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobSkillController.cs" />
+    <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ResumeController.cs" />
     <Compile Include="Controllers\WorkExperienceController.cs" />
@@ -361,6 +363,16 @@
     <Content Include="Views\JobSkill\Details.cshtml" />
     <Content Include="Views\JobSkill\Edit.cshtml" />
     <Content Include="Views\JobSkill\Index.cshtml" />
+    <Content Include="Views\Ethnicity\Create.cshtml" />
+    <Content Include="Views\Ethnicity\Delete.cshtml" />
+    <Content Include="Views\Ethnicity\Details.cshtml" />
+    <Content Include="Views\Ethnicity\Edit.cshtml" />
+    <Content Include="Views\Ethnicity\Index.cshtml" />
+    <Content Include="Views\Language\Create.cshtml" />
+    <Content Include="Views\Language\Delete.cshtml" />
+    <Content Include="Views\Language\Details.cshtml" />
+    <Content Include="Views\Language\Edit.cshtml" />
+    <Content Include="Views\Language\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
