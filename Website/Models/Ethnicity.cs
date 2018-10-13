@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Website.Models
 {
-    [Table("Ethnicty")]
+    [Table("Ethnicities")]
     public class Ethnicity
     {
         [Key, Display(Name ="Ethnicity ID")]

@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Website.Models
 {
-    [Table("Language")]
+    [Table("Languages")]
     public class Language
     {
         [Key, Display(Name ="Language Code")]
