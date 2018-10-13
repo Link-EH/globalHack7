@@ -7,7 +7,7 @@ using System.Web;
 
 namespace Website.Models
 {
-    public class UnicornDatabase : DbContext
+    public class EmploymentDatabase : DbContext
     {
         public DbSet<Unicorn> Unicorns { get; set; }
     }
