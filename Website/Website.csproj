@@ -219,6 +219,10 @@
     <Compile Include="Migrations\201810131450514_InitialCreate.Designer.cs">
       <DependentUpon>201810131450514_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810131606197_Updating DB.cs" />
+    <Compile Include="Migrations\201810131606197_Updating DB.Designer.cs">
+      <DependentUpon>201810131606197_Updating DB.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BusinessProfile.cs" />
@@ -313,6 +317,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201810131450514_InitialCreate.resx">
       <DependentUpon>201810131450514_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810131606197_Updating DB.resx">
+      <DependentUpon>201810131606197_Updating DB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
