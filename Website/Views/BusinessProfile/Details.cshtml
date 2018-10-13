@@ -19,11 +19,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BusinessIndustry)
+            @Html.DisplayNameFor(model => model.Industry)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BusinessIndustry)
+            @Html.DisplayFor(model => model.Industry)
         </dd>
 
         <dt>
@@ -82,13 +82,17 @@
             @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Image)
-        </dt>
+        @if (Model.Image != null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Image)
-        </dd>
+            <dd>
+                <img src="~/Content/BusinessImages/@Model.Image" alt="@Model.BusinessName" />
+            </dd>
+        }
+
 
     </dl>
 </div>
