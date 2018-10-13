@@ -9,6 +9,6 @@ namespace Website.Models
 {
     public class EmploymentDatabase : DbContext
     {
-        public DbSet<Unicorn> Unicorns { get; set; }
+        public DbSet<BusinessProfile> BusinessProfiles { get; set; }
     }
 }
