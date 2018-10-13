@@ -14,6 +14,7 @@ namespace Website.Models
         public DbSet<JobSkill> JobSkills { get; set; }
         public DbSet<BusinessProfile> BusinessProfiles { get; set; }
 
-        public System.Data.Entity.DbSet<Website.Models.Resume> Resumes { get; set; }
+        public DbSet<Resume> Resumes { get; set; }
+        public DbSet<WorkExperience> WorkExperiences { get; set; }
     }
 }
