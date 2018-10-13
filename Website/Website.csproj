@@ -230,6 +230,10 @@
     <Compile Include="Migrations\201810131706217_Adding skills.Designer.cs">
       <DependentUpon>201810131706217_Adding skills.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810132011434_added Industry table, made changes to EmploymentDatabase and BusinessProfile classes.cs" />
+    <Compile Include="Migrations\201810132011434_added Industry table, made changes to EmploymentDatabase and BusinessProfile classes.Designer.cs">
+      <DependentUpon>201810132011434_added Industry table, made changes to EmploymentDatabase and BusinessProfile classes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BusinessProfile.cs" />
@@ -250,6 +254,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\BusinessImages\businessMeeting.jpg" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -345,6 +350,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810131706217_Adding skills.resx">
       <DependentUpon>201810131706217_Adding skills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810132011434_added Industry table, made changes to EmploymentDatabase and BusinessProfile classes.resx">
+      <DependentUpon>201810132011434_added Industry table, made changes to EmploymentDatabase and BusinessProfile classes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

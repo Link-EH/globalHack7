@@ -10,9 +10,9 @@ namespace Website.Models
     [Table("Industries")]
     public class Industry
     {
-        [Key, Display(Name = "Industry#")]
+        [Key, Display(Name = "Industry ID")]
         public Guid IndustryId { get; set; }
-        [Display(Name = "IndustryName")]
+        [Display(Name = "Industry Name")]
         public string IndustryName { get; set; }
     }
 }

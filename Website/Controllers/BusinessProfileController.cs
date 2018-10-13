@@ -21,7 +21,7 @@ namespace Website.Controllers
         //{
         //    return View(db.BusinessProfiles.ToList());
         //}
-        
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -50,11 +50,12 @@ namespace Website.Controllers
             {
                 businessProfiles = businessProfiles.Where(
                     bp => bp.BusinessName.Contains(search) ||
-                         bp.BusinessIndustry.Contains(search) ||
                          bp.Industry.IndustryName.Contains(search)
                     );
             }
-            
+
+            businessProfiles = businessProfiles.OrderBy(bp => bp.BusinessName);
+
             //Display the results
             var model = new BusinessProfileSearchResults
             {

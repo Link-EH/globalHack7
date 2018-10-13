@@ -1,20 +1,22 @@
-﻿@model Website.ViewModels.BusinessProfileSearchResults
+﻿@*@model Website.Models.BusinessProfile*@
+@model Website.ViewModels.BusinessProfileSearchResults
 @using PagedList.Mvc;
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Business Profile";
 }
 
-<h2>ViewBag.Title</h2>
+<h2>@ViewBag.Title</h2>
 
 @using (Html.BeginForm("Index", "BusinessProfile", FormMethod.Get))
 {
     var industries = new SelectList(Model.Industries, "IndustryId", "IndustryName");
 <div class="mb-3">
-    @Html.ActionLink("Create New", "Create")
     @Html.DropDownListFor(bp => bp.IndustryId, industries, "(All)")
     @Html.EditorFor(bp => bp.Search, new { htmlAttributes = new { placeholder = "search" } })
 
     <input class="btn btn-primary" type="submit" value="Search" />
+    <a href="#"><button class="btn btn-default">@Html.ActionLink("Create New", "Create")</button></a> 
+    
 </div>
 }
 
@@ -24,13 +26,13 @@
             Image
         </th>
         <th>
-            Business Name
+            Business
         </th>
         <th>
-            Business Industry
+            Industry
         </th>
         <th>
-            Short Business Description
+            Summary
         </th>
         <th></th>
     </tr>
@@ -45,7 +47,7 @@
                 @Html.DisplayFor(modelItem => item.BusinessName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.BusinessIndustry)
+                @Html.DisplayFor(modelItem => item.Industry.IndustryName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ShortBusinessDescription)
