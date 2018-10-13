@@ -228,6 +228,10 @@
     <Compile Include="Migrations\201810131733208_Add Skill Images Property.Designer.cs">
       <DependentUpon>201810131733208_Add Skill Images Property.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810132104577_Adding image properties to skills tables.cs" />
+    <Compile Include="Migrations\201810132104577_Adding image properties to skills tables.Designer.cs">
+      <DependentUpon>201810132104577_Adding image properties to skills tables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BusinessProfile.cs" />
@@ -314,6 +318,16 @@
     <Content Include="Views\Resume\Details.cshtml" />
     <Content Include="Views\Resume\Edit.cshtml" />
     <Content Include="Views\Resume\Index.cshtml" />
+    <Content Include="Views\JobSkill\Create.cshtml" />
+    <Content Include="Views\JobSkill\Delete.cshtml" />
+    <Content Include="Views\JobSkill\Details.cshtml" />
+    <Content Include="Views\JobSkill\Edit.cshtml" />
+    <Content Include="Views\JobSkill\Index.cshtml" />
+    <Content Include="Views\BusinessProfile\Create.cshtml" />
+    <Content Include="Views\BusinessProfile\Delete.cshtml" />
+    <Content Include="Views\BusinessProfile\Details.cshtml" />
+    <Content Include="Views\BusinessProfile\Edit.cshtml" />
+    <Content Include="Views\BusinessProfile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -340,6 +354,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810131733208_Add Skill Images Property.resx">
       <DependentUpon>201810131733208_Add Skill Images Property.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810132104577_Adding image properties to skills tables.resx">
+      <DependentUpon>201810132104577_Adding image properties to skills tables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

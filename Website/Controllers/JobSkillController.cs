@@ -17,7 +17,7 @@ namespace Website.Controllers
         // GET: JobSkill
         public ActionResult Index()
         {
-            return View(db.JobSkills.ToList());
+            return View(db.JobSkill.ToList());
         }
 
         // GET: JobSkill/Details/5
@@ -27,7 +27,7 @@ namespace Website.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            JobSkill jobSkill = db.JobSkills.Find(id);
+            JobSkill jobSkill = db.JobSkill.Find(id);
             if (jobSkill == null)
             {
                 return HttpNotFound();
@@ -51,7 +51,7 @@ namespace Website.Controllers
             if (ModelState.IsValid)
             {
                 jobSkill.JobSkillId = Guid.NewGuid();
-                db.JobSkills.Add(jobSkill);
+                db.JobSkill.Add(jobSkill);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -66,7 +66,7 @@ namespace Website.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            JobSkill jobSkill = db.JobSkills.Find(id);
+            JobSkill jobSkill = db.JobSkill.Find(id);
             if (jobSkill == null)
             {
                 return HttpNotFound();
@@ -97,7 +97,7 @@ namespace Website.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            JobSkill jobSkill = db.JobSkills.Find(id);
+            JobSkill jobSkill = db.JobSkill.Find(id);
             if (jobSkill == null)
             {
                 return HttpNotFound();
@@ -110,8 +110,8 @@ namespace Website.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            JobSkill jobSkill = db.JobSkills.Find(id);
-            db.JobSkills.Remove(jobSkill);
+            JobSkill jobSkill = db.JobSkill.Find(id);
+            db.JobSkill.Remove(jobSkill);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
