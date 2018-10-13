@@ -81,27 +81,6 @@ namespace Website.Controllers
             {
                 return HttpNotFound();
             }
-
-            StringBuilder sb = new StringBuilder();
-            string street = businessProfile.StreetAddress;
-            for (int i = 0; i < street.Length; i++)
-            {
-                if(street[1] == ' ')
-                {
-                    sb.Append("+");
-                }
-                else
-                {
-                    sb.Append(street[1]);
-                }
-            }
-            sb.Append(",");
-            sb.Append(businessProfile.City);
-            sb.Append(",");
-            sb.Append(businessProfile.State);
-            sb.Append(" US");
-
-            ViewBag.map = sb.ToString();
             
             return View(businessProfile);
         }
