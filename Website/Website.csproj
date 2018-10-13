@@ -212,12 +212,17 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\JobSkillController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ResumeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201810131450514_InitialCreate.cs" />
     <Compile Include="Migrations\201810131450514_InitialCreate.Designer.cs">
       <DependentUpon>201810131450514_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810131606197_Updating DB.cs" />
+    <Compile Include="Migrations\201810131606197_Updating DB.Designer.cs">
+      <DependentUpon>201810131606197_Updating DB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -293,6 +298,11 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Resume\Create.cshtml" />
+    <Content Include="Views\Resume\Delete.cshtml" />
+    <Content Include="Views\Resume\Details.cshtml" />
+    <Content Include="Views\Resume\Edit.cshtml" />
+    <Content Include="Views\Resume\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -313,6 +323,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201810131450514_InitialCreate.resx">
       <DependentUpon>201810131450514_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810131606197_Updating DB.resx">
+      <DependentUpon>201810131606197_Updating DB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
