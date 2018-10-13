@@ -14,6 +14,8 @@ namespace Website.Models
         public Guid EthnicityId { get; set; }
 
         [Display(Name = "Ethnicity Name")]
+        [Required]
+        [StringLength(50)]
         public string EthnicityName { get; set; }
     }
 }
