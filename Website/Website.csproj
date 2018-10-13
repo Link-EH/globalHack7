@@ -224,6 +224,10 @@
     <Compile Include="Migrations\201810131706217_Adding skills.Designer.cs">
       <DependentUpon>201810131706217_Adding skills.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810131733208_Add Skill Images Property.cs" />
+    <Compile Include="Migrations\201810131733208_Add Skill Images Property.Designer.cs">
+      <DependentUpon>201810131733208_Add Skill Images Property.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BusinessProfile.cs" />
@@ -326,6 +330,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810131706217_Adding skills.resx">
       <DependentUpon>201810131706217_Adding skills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810131733208_Add Skill Images Property.resx">
+      <DependentUpon>201810131733208_Add Skill Images Property.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
