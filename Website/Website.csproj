@@ -251,6 +251,14 @@
     <Compile Include="Migrations\201810132011434_added Industry table, made changes to EmploymentDatabase and BusinessProfile classes.Designer.cs">
       <DependentUpon>201810132011434_added Industry table, made changes to EmploymentDatabase and BusinessProfile classes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810132209590_Added Language and Ethnicity Model Classes and added DbSet properties for Language and Ethnicity to the Employment Database.cs" />
+    <Compile Include="Migrations\201810132209590_Added Language and Ethnicity Model Classes and added DbSet properties for Language and Ethnicity to the Employment Database.Designer.cs">
+      <DependentUpon>201810132209590_Added Language and Ethnicity Model Classes and added DbSet properties for Language and Ethnicity to the Employment Database.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810132222573_rename language and ethnicity.cs" />
+    <Compile Include="Migrations\201810132222573_rename language and ethnicity.Designer.cs">
+      <DependentUpon>201810132222573_rename language and ethnicity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BusinessProfile.cs" />
@@ -391,6 +399,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810132011434_added Industry table, made changes to EmploymentDatabase and BusinessProfile classes.resx">
       <DependentUpon>201810132011434_added Industry table, made changes to EmploymentDatabase and BusinessProfile classes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810132209590_Added Language and Ethnicity Model Classes and added DbSet properties for Language and Ethnicity to the Employment Database.resx">
+      <DependentUpon>201810132209590_Added Language and Ethnicity Model Classes and added DbSet properties for Language and Ethnicity to the Employment Database.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810132222573_rename language and ethnicity.resx">
+      <DependentUpon>201810132222573_rename language and ethnicity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
