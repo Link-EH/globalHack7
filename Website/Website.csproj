@@ -232,6 +232,10 @@
     <Compile Include="Migrations\201810132104577_Adding image properties to skills tables.Designer.cs">
       <DependentUpon>201810132104577_Adding image properties to skills tables.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810132318521_Adding seed data to tables.cs" />
+    <Compile Include="Migrations\201810132318521_Adding seed data to tables.Designer.cs">
+      <DependentUpon>201810132318521_Adding seed data to tables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BusinessProfile.cs" />
@@ -357,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810132104577_Adding image properties to skills tables.resx">
       <DependentUpon>201810132104577_Adding image properties to skills tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810132318521_Adding seed data to tables.resx">
+      <DependentUpon>201810132318521_Adding seed data to tables.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

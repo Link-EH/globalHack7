@@ -55,139 +55,139 @@ namespace Website.Migrations
             context.SkillCategory.AddOrUpdate(new SkillCategory {
                 SkillId = Guid.Parse("3f81e114-56d9-448b-b5ac-10be5d622c08"),
                 SkillType = "Technical",
-                SkillCategory = "Programming",
+                SkillsCategory = "Programming",
                 Image = "technical.png"});
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("7eb172bb-ca8a-471a-8bc9-d9b200eeffe5"),
                 SkillType = "Technical",
-                SkillCategory = "Big Data Analysis",
+                SkillsCategory = "Big Data Analysis",
                 Image = "technical.png"
             });
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("92b9c2f5-9b7b-440d-bcfd-f134e5480067"),
                 SkillType = "Technical",
-                SkillCategory = "Technical Writing",
+                SkillsCategory = "Technical Writing",
                 Image = "technical.png"
             });
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("57ac34a4-5dfa-4189-9686-cc69101e321c"),
                 SkillType = "Technical",
-                SkillCategory = "Project Management",
+                SkillsCategory = "Project Management",
                 Image = "technical.png"
             });
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("080ce108-c09a-4bdd-b548-e23f8194231a"),
                 SkillType = "People",
-                SkillCategory = "Training/Coach",
+                SkillsCategory = "Training/Coach",
                 Image = "people.png"
             });
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("c3b72784-a7bb-4314-ac4f-a46cfeb5c71d"),
                 SkillType = "People",
-                SkillCategory = "Customer Service",
+                SkillsCategory = "Customer Service",
                 Image = "people.png"
             });
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("dfe3901e-4000-4bdc-9b64-97dd2553fdfe"),
                 SkillType = "People",
-                SkillCategory = "Management",
+                SkillsCategory = "Management",
                 Image = "people.png"
             });
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("5367f371-cffd-408c-b236-6311a1b2d591"),
                 SkillType = "People",
-                SkillCategory = "Caregiving",
+                SkillsCategory = "Caregiving",
                 Image = "people.png"
             });
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("87298094-cd1f-468d-a7f4-c7384365ede3"),
                 SkillType = "People",
-                SkillCategory = "Entertainment",
+                SkillsCategory = "Entertainment",
                 Image = "people.png"
             });
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("3985e94a-5e61-41e3-a075-b7e12b2f005d"),
                 SkillType = "People",
-                SkillCategory = "Counseling",
+                SkillsCategory = "Counseling",
                 Image = "people.png"
             });
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("80f95f66-3efd-464c-a958-1a8fdf6283c0"),
                 SkillType = "People",
-                SkillCategory = "Mediation",
+                SkillsCategory = "Mediation",
                 Image = "people.png"
             });
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("650d7ed9-38fc-4c3c-bea4-e735b607f7de"),
                 SkillType = "People",
-                SkillCategory = "Politics",
+                SkillsCategory = "Politics",
                 Image = "people.png"
             });
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("878a0582-30cc-49e3-8ecb-650f5020425b"),
                 SkillType = "Clerical",
-                SkillCategory = "Accounting",
+                SkillsCategory = "Accounting",
                 Image = "clerical.png"
             });
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("823d529c-4b19-4d0b-a067-7069b106063a"),
                 SkillType = "Clerical",
-                SkillCategory = "Data Entry",
+                SkillsCategory = "Data Entry",
                 Image = "clerical.png"
             });
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("e4541a1d-ca22-4b7a-99ef-87a56b853442"),
                 SkillType = "Artistic",
-                SkillCategory = "Marketing",
+                SkillsCategory = "Marketing",
                 Image = "artist.png"
             });
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("62306a6f-2db5-49cd-862c-96a690a6691e"),
                 SkillType = "Artistic",
-                SkillCategory = "Production",
+                SkillsCategory = "Production",
                 Image = "artist.png"
             });
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("65d53d0c-a791-45a1-9157-522e32e127b7"),
                 SkillType = "Mechanical",
-                SkillCategory = "Auto",
+                SkillsCategory = "Auto",
                 Image = "mechanical.png"
             });
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("c52d5838-ad98-4e3a-930e-6de1be63ffbc"),
                 SkillType = "Mechanical",
-                SkillCategory = "Engineering",
+                SkillsCategory = "Engineering",
                 Image = "mechanical.png"
             });
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("1a5b1592-3061-46cc-bdc9-4045ce944e31"),
                 SkillType = "Language",
-                SkillCategory = "Translation",
+                SkillsCategory = "Translation",
                 Image = "language.png"
             });
             context.SkillCategory.AddOrUpdate(new SkillCategory
             {
                 SkillId = Guid.Parse("6a977cf5-990a-4099-a67b-683b99443116"),
                 SkillType = "Entrepreneurial",
-                SkillCategory = "Administration",
+                SkillsCategory = "Administration",
                 Image = "business.png"
             });
 
