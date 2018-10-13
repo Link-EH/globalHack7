@@ -228,6 +228,10 @@
     <Compile Include="Migrations\201810131733208_Add Skill Images Property.Designer.cs">
       <DependentUpon>201810131733208_Add Skill Images Property.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810131813190_Added data constrants to Resume.cs" />
+    <Compile Include="Migrations\201810131813190_Added data constrants to Resume.Designer.cs">
+      <DependentUpon>201810131813190_Added data constrants to Resume.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BusinessProfile.cs" />
@@ -333,6 +337,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810131733208_Add Skill Images Property.resx">
       <DependentUpon>201810131733208_Add Skill Images Property.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810131813190_Added data constrants to Resume.resx">
+      <DependentUpon>201810131813190_Added data constrants to Resume.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

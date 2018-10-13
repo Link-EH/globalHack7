@@ -12,13 +12,26 @@ namespace Website.Models
     {
         [Key, Display(Name = "#")]
         public Guid ResumeId { get; set; }
+
         [Display(Name = "First Name")]
+        [Required(ErrorMessage = "First Name Required")]
+        [StringLength(40)]
         public string FirstName { get; set; }
+
         [Display(Name = "Last Name")]
+        [Required(ErrorMessage = "Last Name Required")]
+        [StringLength(40)]
         public string LastName { get; set; }
+
         [Display(Name = "Phone Number")]
+        [DataType(DataType.PhoneNumber)]
+        [StringLength(10)]
+        [MinLength(10)]
         public string PhoneNumber { get; set; }
+
         [Display(Name = "E-Mail")]
+        [DataType(DataType.EmailAddress)]
+        [StringLength(70)]
         public string Email { get; set; }
     }
 }
