@@ -121,6 +121,7 @@ namespace Website.Controllers
             if (disposing)
             {
                 db.Dispose();
+                db = null;
             }
             base.Dispose(disposing);
         }

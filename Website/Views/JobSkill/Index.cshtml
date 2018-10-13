@@ -11,6 +11,7 @@
 </p>
 <table class="table">
     <tr>
+        <th>&nbsp;</th>
         <th>
             @Html.DisplayNameFor(model => model.SkillType)
         </th>
@@ -25,6 +26,9 @@
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            <img src="~/Content/SkillImages/artist.png" />
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.SkillType)
         </td>

@@ -13,5 +13,7 @@ namespace Website.Models
         public string SkillName { get; set; }
         [Display(Name = "Skill Type")]
         public string SkillType { get; set; }
+        [Display (Name = "Skill Image")]
+        public string Image { get; set; }
     }
 }
