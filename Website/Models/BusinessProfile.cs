@@ -17,8 +17,10 @@ namespace Website.Models
         [Display(Name = "Industry")]
         public string BusinessIndustry { get; set; }
         [Display(Name = "ShortDescription")]
+        [DataType(DataType.MultilineText)]
         public string ShortBusinessDescription { get; set; }
         [Display(Name = "LongDescription")]
+        [DataType(DataType.MultilineText)]
         public string LongBusinessDescription { get; set; }
         [Display(Name = "State")]
         public string State { get; set; }
