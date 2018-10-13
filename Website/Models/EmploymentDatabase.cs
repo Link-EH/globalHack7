@@ -16,5 +16,7 @@ namespace Website.Models
         public DbSet<Resume> Resumes { get; set; }
         public DbSet<WorkExperience> WorkExperiences { get; set; }
         public DbSet<Industry> Industries { get; set; }
+        public DbSet<Ethnicity> Ethnicities { get; set; }
+        public DbSet<Language> Languages { get; set; }
     }
 }
