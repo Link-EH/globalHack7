@@ -1,12 +1,15 @@
-﻿using System;
+﻿using PagedList;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using Website.Models;
+using Website.ViewModels;
 
 namespace Website.Controllers
 {
@@ -14,10 +17,56 @@ namespace Website.Controllers
     {
         private EmploymentDatabase db = new EmploymentDatabase();
 
-        // GET: BusinessProfile
-        public ActionResult Index()
+        //// GET: BusinessProfile
+        //public ActionResult Index()
+        //{
+        //    return View(db.BusinessProfiles.ToList());
+        //}
+
+        protected override void Dispose(bool disposing)
         {
-            return View(db.BusinessProfiles.ToList());
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        public ActionResult Index(
+            string search,
+            Guid? industryId,
+            int? page,
+            int? itemsPerPage)
+        {
+            IQueryable<BusinessProfile> businessProfiles = db.BusinessProfiles.Include("Industry");
+
+            //Filter the results
+            if (industryId != null)
+            {
+                businessProfiles = businessProfiles.Where(bp => bp.IndustryId == industryId);
+            }
+
+            //Search by keyword
+            if (!String.IsNullOrWhiteSpace(search))
+            {
+                businessProfiles = businessProfiles.Where(
+                    bp => bp.BusinessName.Contains(search) ||
+                         bp.Industry.IndustryName.Contains(search)
+                    );
+            }
+
+            businessProfiles = businessProfiles.OrderBy(bp => bp.BusinessName);
+
+            //Display the results
+            var model = new BusinessProfileSearchResults
+            {
+                Search = search,
+                IndustryId = industryId,
+                Industries = db.Industries.OrderBy(i => i.IndustryName).ToList(),
+                Results = businessProfiles.ToPagedList(page ?? 1, itemsPerPage ?? 5)
+            };
+
+            return View("Index", model);
         }
 
         // GET: BusinessProfile/Details/5
@@ -32,6 +81,7 @@ namespace Website.Controllers
             {
                 return HttpNotFound();
             }
+            
             return View(businessProfile);
         }
 
@@ -115,13 +165,5 @@ namespace Website.Controllers
             return RedirectToAction("Index");
         }
 
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
     }
 }

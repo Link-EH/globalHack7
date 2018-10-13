@@ -7,118 +7,111 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Website.Models;
-using Website.ViewModels;
 
 namespace Website.Controllers
 {
-    public class ResumeController : Controller
+    public class EthnicityController : Controller
     {
         private EmploymentDatabase db = new EmploymentDatabase();
 
-        // GET: Resume
+        // GET: Ethnicity
         public ActionResult Index()
         {
-            return View(db.Resumes.ToList());
+            return View(db.Ethnicities.ToList());
         }
 
-        // GET: Resume/Details/5
+        // GET: Ethnicity/Details/5
         public ActionResult Details(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WorkResults workResults = new WorkResults();
-            workResults.Resume = db.Resumes.Find(id);
-            if (workResults.Resume == null)
+            Ethnicity ethnicity = db.Ethnicities.Find(id);
+            if (ethnicity == null)
             {
                 return HttpNotFound();
             }
-            List<WorkExperience> workExperiences = db.WorkExperiences.Where(x => x.ResumeId == id).ToList();
-            workResults.WorkExperiences = workExperiences;
-            return View(workResults);
+            return View(ethnicity);
         }
 
-        // GET: Resume/Create
+        // GET: Ethnicity/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Resume/Create
+        // POST: Ethnicity/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ResumeId,FirstName,LastName,PhoneNumber,Email")] Resume resume)
+        public ActionResult Create([Bind(Include = "EthnicityId,EthnicityName")] Ethnicity ethnicity)
         {
             if (ModelState.IsValid)
             {
-                resume.ResumeId = Guid.NewGuid();
-                db.Resumes.Add(resume);
+                ethnicity.EthnicityId = Guid.NewGuid();
+                db.Ethnicities.Add(ethnicity);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(resume);
+            return View(ethnicity);
         }
 
-        // GET: Resume/Edit/5
+        // GET: Ethnicity/Edit/5
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WorkResults workResults = new WorkResults();
-            workResults.Resume = db.Resumes.Find(id);
-            if (workResults.Resume == null)
+            Ethnicity ethnicity = db.Ethnicities.Find(id);
+            if (ethnicity == null)
             {
                 return HttpNotFound();
             }
-            List<WorkExperience> workExperiences = db.WorkExperiences.Where(x => x.ResumeId == id).ToList();
-            workResults.WorkExperiences = workExperiences;
-            return View(workResults);
+            return View(ethnicity);
         }
 
-        // POST: Resume/Edit/5
+        // POST: Ethnicity/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ResumeId,FirstName,LastName,PhoneNumber,Email")] Resume resume)
+        public ActionResult Edit([Bind(Include = "EthnicityId,EthnicityName")] Ethnicity ethnicity)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(resume).State = EntityState.Modified;
+                db.Entry(ethnicity).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(resume);
+            return View(ethnicity);
         }
 
-        // GET: Resume/Delete/5
+        // GET: Ethnicity/Delete/5
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Resume resume = db.Resumes.Find(id);
-            if (resume == null)
+            Ethnicity ethnicity = db.Ethnicities.Find(id);
+            if (ethnicity == null)
             {
                 return HttpNotFound();
             }
-            return View(resume);
+            return View(ethnicity);
         }
 
-        // POST: Resume/Delete/5
+        // POST: Ethnicity/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            Resume resume = db.Resumes.Find(id);
-            db.Resumes.Remove(resume);
+            Ethnicity ethnicity = db.Ethnicities.Find(id);
+            db.Ethnicities.Remove(ethnicity);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

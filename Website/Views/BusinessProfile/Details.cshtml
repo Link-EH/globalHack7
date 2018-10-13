@@ -19,11 +19,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.BusinessIndustry)
+            @Html.DisplayNameFor(model => model.Industry.IndustryName)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.BusinessIndustry)
+            @Html.DisplayFor(model => model.Industry.IndustryName)
         </dd>
 
         <dt>
@@ -82,14 +82,40 @@
             @Html.DisplayFor(model => model.PhoneNumber)
         </dd>
 
+        @if (Model.Image != null)
+        {
+            <dt>
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+
+            <dd>
+                <img src="~/Content/BusinessImages/@Model.Image" alt="@Model.BusinessName" />
+            </dd>
+        }
+
         <dt>
-            @Html.DisplayNameFor(model => model.Image)
+            Location
         </dt>
-
         <dd>
-            @Html.DisplayFor(model => model.Image)
-        </dd>
+            @{ 
+                var fullAddress = new System.Text.StringBuilder();
 
+                fullAddress.Append(Model.StreetAddress);
+                fullAddress.Append(",");
+                fullAddress.Append(Model.City);
+                fullAddress.Append(",");
+                fullAddress.Append(Model.State);
+                fullAddress.Append(",US");
+            }
+            <iframe width="600" 
+                    height="450" 
+                    frameborder="0"
+                    style="border:0"
+                    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCttMNhWa1uq1jdmKjjyw0XWmw_J0eCqKA&q=@Url.Encode(fullAddress.ToString())"
+                    Viewbag.Location
+                    allowfullscreen
+                    id="map"></iframe>
+        </dd>
     </dl>
 </div>
 <p>

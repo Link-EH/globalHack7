@@ -26,10 +26,25 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link"})</li>
+                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Skills", "Index", "JobSkill", null, new { @class = "nav-link" })</li>
                     <li class="nav-item">@Html.ActionLink("Resume", "Index", "Resume", null, new { @class = "nav-link" })</li>
+                    <li class="nav-item">@Html.ActionLink("BusinessProfile", "Index", "BusinessProfile", null, new { @class = "nav-link" })</li>
                 </ul>
+
+                @using (Html.BeginForm("Index", "BusinessProfile", FormMethod.Get,
+                    new { @class = "form-inline navbar-form navbar-left" }))
+                {
+                    <div class="form-group">
+                        @Html.TextBox("Search", null, new {
+                       @class = "form-control input-sm",
+                       placeholder = "search",
+                       autocomplete = "off",
+                   })
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Search</button>
+                }
+
                 @Html.Partial("_LoginPartial")
             </div>
         </div>

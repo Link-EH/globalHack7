@@ -7,118 +7,110 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Website.Models;
-using Website.ViewModels;
 
 namespace Website.Controllers
 {
-    public class ResumeController : Controller
+    public class LanguageController : Controller
     {
         private EmploymentDatabase db = new EmploymentDatabase();
 
-        // GET: Resume
+        // GET: Language
         public ActionResult Index()
         {
-            return View(db.Resumes.ToList());
+            return View(db.Languages.ToList());
         }
 
-        // GET: Resume/Details/5
-        public ActionResult Details(Guid? id)
+        // GET: Language/Details/5
+        public ActionResult Details(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WorkResults workResults = new WorkResults();
-            workResults.Resume = db.Resumes.Find(id);
-            if (workResults.Resume == null)
+            Language language = db.Languages.Find(id);
+            if (language == null)
             {
                 return HttpNotFound();
             }
-            List<WorkExperience> workExperiences = db.WorkExperiences.Where(x => x.ResumeId == id).ToList();
-            workResults.WorkExperiences = workExperiences;
-            return View(workResults);
+            return View(language);
         }
 
-        // GET: Resume/Create
+        // GET: Language/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Resume/Create
+        // POST: Language/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ResumeId,FirstName,LastName,PhoneNumber,Email")] Resume resume)
+        public ActionResult Create([Bind(Include = "LanguageCode,EnglishName,NativeLanguage")] Language language)
         {
             if (ModelState.IsValid)
             {
-                resume.ResumeId = Guid.NewGuid();
-                db.Resumes.Add(resume);
+                db.Languages.Add(language);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(resume);
+            return View(language);
         }
 
-        // GET: Resume/Edit/5
-        public ActionResult Edit(Guid? id)
+        // GET: Language/Edit/5
+        public ActionResult Edit(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WorkResults workResults = new WorkResults();
-            workResults.Resume = db.Resumes.Find(id);
-            if (workResults.Resume == null)
+            Language language = db.Languages.Find(id);
+            if (language == null)
             {
                 return HttpNotFound();
             }
-            List<WorkExperience> workExperiences = db.WorkExperiences.Where(x => x.ResumeId == id).ToList();
-            workResults.WorkExperiences = workExperiences;
-            return View(workResults);
+            return View(language);
         }
 
-        // POST: Resume/Edit/5
+        // POST: Language/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ResumeId,FirstName,LastName,PhoneNumber,Email")] Resume resume)
+        public ActionResult Edit([Bind(Include = "LanguageCode,EnglishName,NativeLanguage")] Language language)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(resume).State = EntityState.Modified;
+                db.Entry(language).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(resume);
+            return View(language);
         }
 
-        // GET: Resume/Delete/5
-        public ActionResult Delete(Guid? id)
+        // GET: Language/Delete/5
+        public ActionResult Delete(string id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Resume resume = db.Resumes.Find(id);
-            if (resume == null)
+            Language language = db.Languages.Find(id);
+            if (language == null)
             {
                 return HttpNotFound();
             }
-            return View(resume);
+            return View(language);
         }
 
-        // POST: Resume/Delete/5
+        // POST: Language/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(Guid id)
+        public ActionResult DeleteConfirmed(string id)
         {
-            Resume resume = db.Resumes.Find(id);
-            db.Resumes.Remove(resume);
+            Language language = db.Languages.Find(id);
+            db.Languages.Remove(language);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

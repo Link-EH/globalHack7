@@ -7,118 +7,116 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Website.Models;
-using Website.ViewModels;
 
 namespace Website.Controllers
 {
-    public class ResumeController : Controller
+    public class WorkExperienceController : Controller
     {
         private EmploymentDatabase db = new EmploymentDatabase();
 
-        // GET: Resume
+        // GET: WorkExperience
         public ActionResult Index()
         {
-            return View(db.Resumes.ToList());
+            return View(db.WorkExperiences.ToList());
         }
 
-        // GET: Resume/Details/5
+        // GET: WorkExperience/Details/5
         public ActionResult Details(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WorkResults workResults = new WorkResults();
-            workResults.Resume = db.Resumes.Find(id);
-            if (workResults.Resume == null)
+            WorkExperience workExperience = db.WorkExperiences.Find(id);
+            if (workExperience == null)
             {
                 return HttpNotFound();
             }
-            List<WorkExperience> workExperiences = db.WorkExperiences.Where(x => x.ResumeId == id).ToList();
-            workResults.WorkExperiences = workExperiences;
-            return View(workResults);
+            return View(workExperience);
         }
 
-        // GET: Resume/Create
-        public ActionResult Create()
+        // GET: WorkExperience/Create
+        public ActionResult Create(Guid? resumeId)
         {
-            return View();
+            if(resumeId == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+            WorkExperience workExperience = new WorkExperience { ResumeId = resumeId.Value };
+            return View(workExperience);
         }
 
-        // POST: Resume/Create
+        // POST: WorkExperience/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ResumeId,FirstName,LastName,PhoneNumber,Email")] Resume resume)
+        public ActionResult Create([Bind(Include = "WorkExperienceId,ResumeId,BusinessName,StartDate,EndDate,JobTitle,Description")] WorkExperience workExperience)
         {
             if (ModelState.IsValid)
             {
-                resume.ResumeId = Guid.NewGuid();
-                db.Resumes.Add(resume);
+                workExperience.WorkExperienceId = Guid.NewGuid();
+                db.WorkExperiences.Add(workExperience);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(resume);
+            return View(workExperience);
         }
 
-        // GET: Resume/Edit/5
+        // GET: WorkExperience/Edit/5
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WorkResults workResults = new WorkResults();
-            workResults.Resume = db.Resumes.Find(id);
-            if (workResults.Resume == null)
+            WorkExperience workExperience = db.WorkExperiences.Find(id);
+            if (workExperience == null)
             {
                 return HttpNotFound();
             }
-            List<WorkExperience> workExperiences = db.WorkExperiences.Where(x => x.ResumeId == id).ToList();
-            workResults.WorkExperiences = workExperiences;
-            return View(workResults);
+            return View(workExperience);
         }
 
-        // POST: Resume/Edit/5
+        // POST: WorkExperience/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ResumeId,FirstName,LastName,PhoneNumber,Email")] Resume resume)
+        public ActionResult Edit([Bind(Include = "WorkExperienceId,ResumeId,BusinessName,StartDate,EndDate,JobTitle,Description")] WorkExperience workExperience)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(resume).State = EntityState.Modified;
+                db.Entry(workExperience).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(resume);
+            return View(workExperience);
         }
 
-        // GET: Resume/Delete/5
+        // GET: WorkExperience/Delete/5
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Resume resume = db.Resumes.Find(id);
-            if (resume == null)
+            WorkExperience workExperience = db.WorkExperiences.Find(id);
+            if (workExperience == null)
             {
                 return HttpNotFound();
             }
-            return View(resume);
+            return View(workExperience);
         }
 
-        // POST: Resume/Delete/5
+        // POST: WorkExperience/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
         {
-            Resume resume = db.Resumes.Find(id);
-            db.Resumes.Remove(resume);
+            WorkExperience workExperience = db.WorkExperiences.Find(id);
+            db.WorkExperiences.Remove(workExperience);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

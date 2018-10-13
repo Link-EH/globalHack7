@@ -8,7 +8,10 @@ namespace Website.Models
         public DbSet<SkillCategory> SkillCategory { get; set; }
         public DbSet<JobSkill> JobSkill { get; set; }
         public DbSet<BusinessProfile> BusinessProfiles { get; set; }
-
-        public System.Data.Entity.DbSet<Website.Models.Resume> Resumes { get; set; }
+        public DbSet<Resume> Resumes { get; set; }
+        public DbSet<WorkExperience> WorkExperiences { get; set; }
+        public DbSet<Industry> Industries { get; set; }
+        public DbSet<Ethnicity> Ethnicities { get; set; }
+        public DbSet<Language> Languages { get; set; }
     }
 }
