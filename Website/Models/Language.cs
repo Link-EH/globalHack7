@@ -10,7 +10,7 @@ namespace Website.Models
     [Table("Language")]
     public class Language
     {
-        [Display(Name ="Language Code")]
+        [Key, Display(Name ="Language Code")]
         public string LanguageCode { get; set; }
 
         [Display(Name ="English Name")]

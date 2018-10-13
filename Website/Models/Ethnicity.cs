@@ -10,7 +10,7 @@ namespace Website.Models
     [Table("Ethnicty")]
     public class Ethnicity
     {
-        [Display(Name ="Ethnicity ID")]
+        [Key, Display(Name ="Ethnicity ID")]
         public Guid EthnicityId { get; set; }
 
         [Display(Name = "Ethnicity Name")]
