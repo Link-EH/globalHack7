@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,9 +10,9 @@ namespace Website.Models
     [Table("BusinessProfiles")]
     public class BusinessProfile
     {
-        [Key, Display(Name = "#")]
+        [Key, Display(Name = "Business#")]
         public int BusinessId { get; set; }
-        [Display(Name = "Name")]
+        [Display(Name = "BusinessName")]
         public string BusinessName { get; set; }
         [Display(Name = "Industry")]
         public string BusinessIndustry { get; set; }
@@ -26,14 +26,18 @@ namespace Website.Models
         public string State { get; set; }
         [Display(Name = "City")]
         public string City { get; set; }
-        [Display(Name = "Street Address")]
+        [Display(Name = "StreetAddress")]
         public string StreetAddress { get; set; }
-        [Display(Name = "Email Address")]
+        [Display(Name = "EmailAddress")]
         public string EmailAddress { get; set; }
-        [Display(Name = "Phone Number")]
+        [Display(Name = "PhoneNumber")]
         public string PhoneNumber { get; set; }
         [Display(Name = "Image")]
         public string Image { get; set; }
-        
+
+        [Display(Name = "Industry#")]
+        public Guid IndustryId { get; set; }
+        public virtual Industry Industry { get; set; }
+
     }
 }
