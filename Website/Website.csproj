@@ -242,6 +242,7 @@
     <Compile Include="Models\SkillType.cs" />
     <Compile Include="Models\EmploymentDatabase.cs" />
     <Compile Include="Models\Resume.cs" />
+    <Compile Include="Models\WorkExperience.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
