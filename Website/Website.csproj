@@ -301,9 +301,9 @@
     <Compile Include="Migrations\201810140404167_added FKs to Resume.Designer.cs">
       <DependentUpon>201810140404167_added FKs to Resume.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201810140513259_Updating ResumeSkills.cs" />
-    <Compile Include="Migrations\201810140513259_Updating ResumeSkills.Designer.cs">
-      <DependentUpon>201810140513259_Updating ResumeSkills.cs</DependentUpon>
+    <Compile Include="Migrations\201810140544313_Resume skills.cs" />
+    <Compile Include="Migrations\201810140544313_Resume skills.Designer.cs">
+      <DependentUpon>201810140544313_Resume skills.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -574,6 +574,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810140404167_added FKs to Resume.resx">
       <DependentUpon>201810140404167_added FKs to Resume.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810140544313_Resume skills.resx">
+      <DependentUpon>201810140544313_Resume skills.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
