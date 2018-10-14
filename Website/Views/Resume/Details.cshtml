@@ -2,64 +2,66 @@
 
 
 @{
-    ViewBag.Title = "Details";
+     = "Details";
 }
 
-<h2>Details</h2>
+<div class="main-container-wrap">
+    <h2>@ViewBag.Title</h2>
 
-<div>
-    <h4>Resume</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Resume.FirstName)
-        </dt>
+    <div>
+        <h4>Resume</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Resume.FirstName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Resume.FirstName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Resume.FirstName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Resume.LastName)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Resume.LastName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Resume.LastName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Resume.LastName)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Resume.PhoneNumber)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Resume.PhoneNumber)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Resume.PhoneNumber)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Resume.PhoneNumber)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Resume.Email)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Resume.Email)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Resume.Email)
-        </dd>
-        @if (Model.WorkExperiences[0] != null)
-        {
-        <dt>
-            Work Experience
-        </dt>
-            foreach (var items in Model.WorkExperiences)
+            <dd>
+                @Html.DisplayFor(model => model.Resume.Email)
+            </dd>
+            @if (Model.WorkExperiences[0] != null)
             {
-                <dd>
-                    @Html.DisplayFor(modelitem => items.BusinessName) @Html.DisplayFor(modelitem => items.JobTitle) @Html.DisplayFor(modelitem => items.StartDate) - @Html.DisplayFor(modelitem => items.EndDate)
+                <dt>
+                    Work Experience
+                </dt>
+                foreach (var items in Model.WorkExperiences)
+                {
+                    <dd>
+                        @Html.DisplayFor(modelitem => items.BusinessName) @Html.DisplayFor(modelitem => items.JobTitle) @Html.DisplayFor(modelitem => items.StartDate) - @Html.DisplayFor(modelitem => items.EndDate)
 
-                </dd>
-                <dd>@Html.DisplayFor(modelitem => items.Description)</dd>
-                <dd></dd>
+                    </dd>
+                    <dd>@Html.DisplayFor(modelitem => items.Description)</dd>
+                    <dd></dd>
+                }
             }
-        }
-    </dl>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Resume.ResumeId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Resume.ResumeId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
