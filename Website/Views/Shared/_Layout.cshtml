@@ -25,7 +25,7 @@
 
             </div>
             <div class="navbar-collapse collapse" id="navbarColor01">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav"style="width: 30%;">
                     <li class="nav-item"><i class="fas fa-home d-inline-block"></i>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "nav-link d-inline-block" })</li>
                     <li class="nav-item"><i class="fas fa-hammer d-inline-block"></i>@Html.ActionLink("Skills", "Index", "JobSkill", null, new { @class = "nav-link d-inline-block" })</li>
                     <li class="nav-item"><i class="far fa-file-alt d-inline-block"></i>@Html.ActionLink("Resume", "Index", "Resume", null, new { @class = "nav-link d-inline-block" })</li>
@@ -33,7 +33,7 @@
                 </ul>
 
                 @using (Html.BeginForm("Index", "BusinessProfile", FormMethod.Get,
-                    new { @class = "form-inline navbar-form navbar-left" }))
+                    new { @class = "form-inline navbar-form navbar-left", @style = "width: 40%;"}))
                 {
                     <div class="form-group">
                         @Html.TextBox("Search", null, new {
