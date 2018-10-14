@@ -11,11 +11,13 @@ using Website.ViewModels;
 
 namespace Website.Controllers
 {
+    [Authorize]
     public class ResumeController : Controller
     {
         private EmploymentDatabase db = new EmploymentDatabase();
 
         // GET: Resume
+        [Authorize(Roles = "Admin, Translator")]
         public ActionResult Index()
         {
             return View(db.Resumes.ToList());
