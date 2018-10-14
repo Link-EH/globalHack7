@@ -88,6 +88,7 @@ namespace Website.Controllers
         // GET: BusinessProfile/Create
         public ActionResult Create()
         {
+            ViewBag.IndustryId = new SelectList(db.Industries, "IndustryId", "IndustryName");
             return View();
         }
 
@@ -105,6 +106,7 @@ namespace Website.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.IndustryId = new SelectList(db.Industries, "IndustryId", "IndustryName");
             return View(businessProfile);
         }
 
@@ -120,6 +122,8 @@ namespace Website.Controllers
             {
                 return HttpNotFound();
             }
+
+            ViewBag.IndustryId = new SelectList(db.Industries, "IndustryId", "IndustryName");
             return View(businessProfile);
         }
 
@@ -136,6 +140,8 @@ namespace Website.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+
+            ViewBag.IndustryId = new SelectList(db.Industries, "IndustryId", "IndustryName");
             return View(businessProfile);
         }
 
