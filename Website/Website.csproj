@@ -281,6 +281,10 @@
     <Compile Include="Migrations\201810140025210_renaming skill columns.Designer.cs">
       <DependentUpon>201810140025210_renaming skill columns.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810140100576_updated property signatures for langauge.cs" />
+    <Compile Include="Migrations\201810140100576_updated property signatures for langauge.Designer.cs">
+      <DependentUpon>201810140100576_updated property signatures for langauge.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BusinessProfile.cs" />
@@ -471,6 +475,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810140025210_renaming skill columns.resx">
       <DependentUpon>201810140025210_renaming skill columns.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810140100576_updated property signatures for langauge.resx">
+      <DependentUpon>201810140100576_updated property signatures for langauge.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

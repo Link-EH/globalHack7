@@ -18,11 +18,11 @@ namespace Website.Models
         [Display(Name ="English Name")]
         [Required]
         [StringLength(50)]
-        public string EnglishName { get; set; }
+        public string EnglishLanguageName { get; set; }
 
         [Display(Name ="Native Language")]
         [Required]
         [StringLength(50)]
-        public string NativeLanguage { get; set; }
+        public string NativeLanguageName { get; set; }
     }
 }
