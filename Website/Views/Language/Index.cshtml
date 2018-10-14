@@ -12,6 +12,9 @@
 <table class="table">
     <tr>
         <th>
+            @Html.DisplayNameFor(model => model.LanguageCode)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.EnglishName)
         </th>
         <th>
@@ -23,15 +26,18 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.DisplayFor(modelItem => item.LanguageCode)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.EnglishName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.NativeLanguage)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.LanguageCode }) |
-            @Html.ActionLink("Details", "Details", new { id=item.LanguageCode }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.LanguageCode })
+            @Html.ActionLink("Edit", "Edit", new { id = item.LanguageCode }) |
+            @Html.ActionLink("Details", "Details", new { id = item.LanguageCode }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.LanguageCode })
         </td>
     </tr>
 }

@@ -9,5 +9,7 @@ namespace Website.Models
     {
         [Display(Name = "Skill Type"), Key]
         public string Name { get; set; }
+        [Display(Name = "Skill Image")]
+        public string Image { get; set; }
     }
 }

@@ -237,6 +237,14 @@
     <Compile Include="Migrations\201810131733208_Add Skill Images Property.Designer.cs">
       <DependentUpon>201810131733208_Add Skill Images Property.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810132104577_Adding image properties to skills tables.cs" />
+    <Compile Include="Migrations\201810132104577_Adding image properties to skills tables.Designer.cs">
+      <DependentUpon>201810132104577_Adding image properties to skills tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810132318521_Adding seed data to tables.cs" />
+    <Compile Include="Migrations\201810132318521_Adding seed data to tables.Designer.cs">
+      <DependentUpon>201810132318521_Adding seed data to tables.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\201810131813190_Added data constrants to Resume.cs" />
     <Compile Include="Migrations\201810131813190_Added data constrants to Resume.Designer.cs">
       <DependentUpon>201810131813190_Added data constrants to Resume.cs</DependentUpon>
@@ -265,6 +273,10 @@
     <Compile Include="Migrations\201810132301305_fixed IndustryId field showing up on create, delete, detail, and edit.Designer.cs">
       <DependentUpon>201810132301305_fixed IndustryId field showing up on create, delete, detail, and edit.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810132329474_added validation constraints to Language and ethnicity.cs" />
+    <Compile Include="Migrations\201810132329474_added validation constraints to Language and ethnicity.Designer.cs">
+      <DependentUpon>201810132329474_added validation constraints to Language and ethnicity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BusinessProfile.cs" />
@@ -274,6 +286,7 @@
     <Compile Include="Models\JobSkill.cs" />
     <Compile Include="Models\Language.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Project.cs" />
     <Compile Include="Models\SkillCategory.cs" />
     <Compile Include="Models\SkillType.cs" />
     <Compile Include="Models\EmploymentDatabase.cs" />
@@ -289,6 +302,13 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\SkillImages\artist.png" />
+    <Content Include="Content\SkillImages\business.png" />
+    <Content Include="Content\SkillImages\clerical.png" />
+    <Content Include="Content\SkillImages\language.png" />
+    <Content Include="Content\SkillImages\mechanical.png" />
+    <Content Include="Content\SkillImages\people.png" />
+    <Content Include="Content\SkillImages\technical.png" />
     <Content Include="Content\BusinessImages\businessMeeting.jpg" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
@@ -377,6 +397,16 @@
     <Content Include="Views\Language\Details.cshtml" />
     <Content Include="Views\Language\Edit.cshtml" />
     <Content Include="Views\Language\Index.cshtml" />
+    <Content Include="Views\JobSkill\Create.cshtml" />
+    <Content Include="Views\JobSkill\Delete.cshtml" />
+    <Content Include="Views\JobSkill\Details.cshtml" />
+    <Content Include="Views\JobSkill\Edit.cshtml" />
+    <Content Include="Views\JobSkill\Index.cshtml" />
+    <Content Include="Views\BusinessProfile\Create.cshtml" />
+    <Content Include="Views\BusinessProfile\Delete.cshtml" />
+    <Content Include="Views\BusinessProfile\Details.cshtml" />
+    <Content Include="Views\BusinessProfile\Edit.cshtml" />
+    <Content Include="Views\BusinessProfile\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -424,6 +454,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810132301305_fixed IndustryId field showing up on create, delete, detail, and edit.resx">
       <DependentUpon>201810132301305_fixed IndustryId field showing up on create, delete, detail, and edit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810132104577_Adding image properties to skills tables.resx">
+      <DependentUpon>201810132104577_Adding image properties to skills tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810132318521_Adding seed data to tables.resx">
+      <DependentUpon>201810132318521_Adding seed data to tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810132329474_added validation constraints to Language and ethnicity.resx">
+      <DependentUpon>201810132329474_added validation constraints to Language and ethnicity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

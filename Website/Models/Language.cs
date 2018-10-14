@@ -11,12 +11,18 @@ namespace Website.Models
     public class Language
     {
         [Key, Display(Name ="Language Code")]
+        [Required]
+        [StringLength(5)]
         public string LanguageCode { get; set; }
 
         [Display(Name ="English Name")]
+        [Required]
+        [StringLength(50)]
         public string EnglishName { get; set; }
 
         [Display(Name ="Native Language")]
+        [Required]
+        [StringLength(50)]
         public string NativeLanguage { get; set; }
     }
 }

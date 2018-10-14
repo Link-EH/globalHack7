@@ -15,7 +15,7 @@ namespace Website.Models
         public string SkillType { get; set; }
         [Display(Name = "Skill Category")]
         public string SkillCategory { get; set; }
-        [Display (Name = "Skill Image")]
+        [Display(Name = "Skill Image")]
         public string Image { get; set; }
     }
 }
