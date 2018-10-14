@@ -34,8 +34,19 @@ namespace Website.Controllers
             {
                 return HttpNotFound();
             }
-            List<WorkExperience> workExperiences = db.WorkExperiences.Where(x => x.ResumeId == id).ToList();
-            workResults.WorkExperiences = workExperiences;
+            workResults.WorkExperiences = db.WorkExperiences.Where(x => x.ResumeId == id).ToList();
+            var query =
+              from j in db.JobSkill
+              join c in db.SkillCategory on j.SkillCategory equals c.SkillCategoryName
+              orderby j.SkillType, j.SkillCategory, j.JobSkillName
+              select new JobSkillInfo
+              {
+                  JobSkillId = j.JobSkillId,
+                  SkillType = j.SkillType,
+                  SkillCategory = j.SkillCategory,
+                  JobSkillName = j.JobSkillName,
+                  Image = c.Image
+              };
             return View(workResults);
         }
 

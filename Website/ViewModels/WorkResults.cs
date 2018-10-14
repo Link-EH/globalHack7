@@ -10,5 +10,6 @@ namespace Website.ViewModels
     {
         public Resume Resume { get; set; }
         public List<WorkExperience> WorkExperiences { get; set; }
+        public List<JobSkillInfo> JobSkillInfos { get; set; }
     }
 }
