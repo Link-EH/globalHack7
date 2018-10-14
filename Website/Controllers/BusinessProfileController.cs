@@ -32,6 +32,7 @@ namespace Website.Controllers
             base.Dispose(disposing);
         }
 
+        [AllowAnonymous]
         public ActionResult Index(
             string search,
             Guid? industryId,
@@ -70,6 +71,7 @@ namespace Website.Controllers
         }
 
         // GET: BusinessProfile/Details/5
+        [AllowAnonymous]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -86,6 +88,7 @@ namespace Website.Controllers
         }
 
         // GET: BusinessProfile/Create
+        [Authorize(Roles = "Business")]
         public ActionResult Create()
         {
             ViewBag.IndustryId = new SelectList(db.Industries, "IndustryId", "IndustryName");
@@ -97,6 +100,7 @@ namespace Website.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Business")]
         public ActionResult Create([Bind(Include = "BusinessId,BusinessName,BusinessIndustry,ShortBusinessDescription,LongBusinessDescription,State,City,StreetAddress,EmailAddress,PhoneNumber,Image")] BusinessProfile businessProfile)
         {
             if (ModelState.IsValid)
@@ -111,6 +115,7 @@ namespace Website.Controllers
         }
 
         // GET: BusinessProfile/Edit/5
+        [Authorize(Roles = "Business")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -132,6 +137,7 @@ namespace Website.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Business")]
         public ActionResult Edit([Bind(Include = "BusinessId,BusinessName,BusinessIndustry,ShortBusinessDescription,LongBusinessDescription,State,City,StreetAddress,EmailAddress,PhoneNumber,Image")] BusinessProfile businessProfile)
         {
             if (ModelState.IsValid)
@@ -146,6 +152,7 @@ namespace Website.Controllers
         }
 
         // GET: BusinessProfile/Delete/5
+        [Authorize(Roles = "Business")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -163,6 +170,7 @@ namespace Website.Controllers
         // POST: BusinessProfile/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
+        [Authorize(Roles = "Business")]
         public ActionResult DeleteConfirmed(int id)
         {
             BusinessProfile businessProfile = db.BusinessProfiles.Find(id);
