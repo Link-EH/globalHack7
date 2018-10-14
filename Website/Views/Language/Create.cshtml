@@ -24,18 +24,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.EnglishName, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.EnglishLanguageName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.EnglishName, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.EnglishName, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.EnglishLanguageName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EnglishLanguageName, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.NativeLanguage, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.EnglishLanguageName, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.NativeLanguage, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.NativeLanguage, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.NativeLanguageName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.NativeLanguageName, "", new { @class = "text-danger" })
             </div>
         </div>
 

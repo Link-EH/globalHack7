@@ -14,6 +14,6 @@ namespace Website.Models
         public Guid ResumeId { get; set; }
 
         [Key, Column(Order = 1)]
-        public Guid JobSkillId { get; set; }
+        public Guid SkillCategoryId { get; set; }
     }
 }

@@ -11,11 +11,13 @@ using Website.ViewModels;
 
 namespace Website.Controllers
 {
+    [Authorize]
     public class ResumeController : Controller
     {
         private EmploymentDatabase db = new EmploymentDatabase();
 
         // GET: Resume
+        [Authorize(Roles = "Admin, Translator")]
         public ActionResult Index()
         {
             return View(db.Resumes.ToList());
@@ -35,18 +37,6 @@ namespace Website.Controllers
                 return HttpNotFound();
             }
             workResults.WorkExperiences = db.WorkExperiences.Where(x => x.ResumeId == id).ToList();
-            var query =
-              from j in db.JobSkill
-              join c in db.SkillCategory on j.SkillCategory equals c.SkillCategoryName
-              orderby j.SkillType, j.SkillCategory, j.JobSkillName
-              select new JobSkillInfo
-              {
-                  JobSkillId = j.JobSkillId,
-                  SkillType = j.SkillType,
-                  SkillCategory = j.SkillCategory,
-                  JobSkillName = j.JobSkillName,
-                  Image = c.Image
-              };
             return View(workResults);
         }
 
@@ -89,6 +79,28 @@ namespace Website.Controllers
             }
             List<WorkExperience> workExperiences = db.WorkExperiences.Where(x => x.ResumeId == id).ToList();
             workResults.WorkExperiences = workExperiences;
+            
+            //var query =
+            //  from c in db.SkillCategory
+            //  join rs in db.ResumeSkills on j.JobSkillId equals rs.SkillCategoryId
+            //  where rs.ResumeId == id
+            //  orderby j.SkillType, j.SkillCategory, j.JobSkillName
+            //  select new JobSkillInfo
+            //  {
+            //      JobSkillId = j.JobSkillId,
+            //      SkillType = j.SkillType,
+            //      SkillCategory = j.SkillCategory,
+            //      JobSkillName = j.JobSkillName,
+            //      Image = c.Image
+            //  };
+            //workResults.JobSkillInfos = query.ToList();
+
+            workResults.SkillCategories = db.SkillCategory.ToList();
+            workResults.AquiredSkills = (
+                from s in db.ResumeSkills
+                where s.ResumeId == id
+                select s.SkillCategoryId
+            ).ToList();
             return View(workResults);
         }
 

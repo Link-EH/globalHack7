@@ -11,6 +11,7 @@ using Website.ViewModels;
 
 namespace Website.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class JobSkillController : Controller
     {
         private EmploymentDatabase db = new EmploymentDatabase();
@@ -50,6 +51,7 @@ namespace Website.Controllers
         }
 
         // GET: JobSkill/Create
+        
         public ActionResult Create()
         {
             return View();

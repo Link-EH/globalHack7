@@ -1,8 +1,7 @@
 ﻿@model Website.ViewModels.WorkResults
 
-
 @{
-     = "Details";
+     ViewBag.Title = "Details";
 }
 
 <div class="main-container-wrap">
@@ -56,12 +55,13 @@
                     </dd>
                     <dd>@Html.DisplayFor(modelitem => items.Description)</dd>
                     <dd></dd>
-                }
+                } 
             }
         </dl>
     </div>
     <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Resume.ResumeId }) |
+        @Html.ActionLink("Edit", "Edit", "Resume", new { id = Model.Resume.ResumeId }, null) |
+        @Html.ActionLink("Translate Resume", "Create", "TranslateResume", new { originalResumeId = Model.Resume.ResumeId}, null) |
         @Html.ActionLink("Back to List", "Index")
     </p>
 </div>

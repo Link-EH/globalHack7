@@ -223,6 +223,7 @@
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ResumeController.cs" />
+    <Compile Include="Controllers\TranslateResumeController.cs" />
     <Compile Include="Controllers\ResumeSkillController.cs" />
     <Compile Include="Controllers\WorkExperienceController.cs" />
     <Compile Include="Global.asax.cs">
@@ -292,6 +293,18 @@
     <Compile Include="Migrations\201810140151574_Adding Resume Skills.Designer.cs">
       <DependentUpon>201810140151574_Adding Resume Skills.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201810140404013_Changed Resume Skills.cs" />
+    <Compile Include="Migrations\201810140404013_Changed Resume Skills.Designer.cs">
+      <DependentUpon>201810140404013_Changed Resume Skills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810140404167_added FKs to Resume.cs" />
+    <Compile Include="Migrations\201810140404167_added FKs to Resume.Designer.cs">
+      <DependentUpon>201810140404167_added FKs to Resume.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810140513259_Updating ResumeSkills.cs" />
+    <Compile Include="Migrations\201810140513259_Updating ResumeSkills.Designer.cs">
+      <DependentUpon>201810140513259_Updating ResumeSkills.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\BusinessProfile.cs" />
@@ -321,6 +334,23 @@
     <Content Include="Content\bootstrap-reboot.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\FontAwesome\css\all.css" />
+    <Content Include="Content\FontAwesome\css\all.min.css" />
+    <Content Include="Content\FontAwesome\css\brands.css" />
+    <Content Include="Content\FontAwesome\css\brands.min.css" />
+    <Content Include="Content\FontAwesome\css\fontawesome.css" />
+    <Content Include="Content\FontAwesome\css\fontawesome.min.css" />
+    <Content Include="Content\FontAwesome\css\regular.css" />
+    <Content Include="Content\FontAwesome\css\regular.min.css" />
+    <Content Include="Content\FontAwesome\css\solid.css" />
+    <Content Include="Content\FontAwesome\css\solid.min.css" />
+    <Content Include="Content\FontAwesome\css\svg-with-js.css" />
+    <Content Include="Content\FontAwesome\css\svg-with-js.min.css" />
+    <Content Include="Content\FontAwesome\css\v4-shims.css" />
+    <Content Include="Content\FontAwesome\css\v4-shims.min.css" />
+    <Content Include="Content\FontAwesome\webfonts\fa-brands-400.svg" />
+    <Content Include="Content\FontAwesome\webfonts\fa-regular-400.svg" />
+    <Content Include="Content\FontAwesome\webfonts\fa-solid-900.svg" />
     <Content Include="Content\SkillImages\artist.png" />
     <Content Include="Content\SkillImages\business.png" />
     <Content Include="Content\SkillImages\clerical.png" />
@@ -358,6 +388,18 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\FontAwesome\webfonts\fa-brands-400.eot" />
+    <Content Include="Content\FontAwesome\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\FontAwesome\webfonts\fa-brands-400.woff" />
+    <Content Include="Content\FontAwesome\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\FontAwesome\webfonts\fa-regular-400.eot" />
+    <Content Include="Content\FontAwesome\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\FontAwesome\webfonts\fa-regular-400.woff" />
+    <Content Include="Content\FontAwesome\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\FontAwesome\webfonts\fa-solid-900.eot" />
+    <Content Include="Content\FontAwesome\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\FontAwesome\webfonts\fa-solid-900.woff" />
+    <Content Include="Content\FontAwesome\webfonts\fa-solid-900.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -453,6 +495,11 @@
     <Content Include="Views\BusinessProfile\Details.cshtml" />
     <Content Include="Views\BusinessProfile\Edit.cshtml" />
     <Content Include="Views\BusinessProfile\Index.cshtml" />
+    <Content Include="Views\TranslateResume\Create.cshtml" />
+    <Content Include="Views\TranslateResume\Delete.cshtml" />
+    <Content Include="Views\TranslateResume\Details.cshtml" />
+    <Content Include="Views\TranslateResume\Edit.cshtml" />
+    <Content Include="Views\TranslateResume\Index.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -521,6 +568,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810140151574_Adding Resume Skills.resx">
       <DependentUpon>201810140151574_Adding Resume Skills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810140404013_Changed Resume Skills.resx">
+      <DependentUpon>201810140404013_Changed Resume Skills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810140404167_added FKs to Resume.resx">
+      <DependentUpon>201810140404167_added FKs to Resume.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
