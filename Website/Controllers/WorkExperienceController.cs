@@ -58,7 +58,7 @@ namespace Website.Controllers
                 workExperience.WorkExperienceId = Guid.NewGuid();
                 db.WorkExperiences.Add(workExperience);
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Edit", "Resume", new { id = workExperience.ResumeId });
             }
 
             return View(workExperience);
@@ -90,7 +90,7 @@ namespace Website.Controllers
             {
                 db.Entry(workExperience).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Edit", "Resume", new { id = workExperience.ResumeId });
             }
             return View(workExperience);
         }
@@ -118,7 +118,7 @@ namespace Website.Controllers
             WorkExperience workExperience = db.WorkExperiences.Find(id);
             db.WorkExperiences.Remove(workExperience);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Edit", "Resume", new { id = workExperience.ResumeId });
         }
 
         protected override void Dispose(bool disposing)

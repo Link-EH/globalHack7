@@ -17,5 +17,11 @@ namespace Website.Models
         public string SkillCategory { get; set; }
         [Display(Name = "Skill Image")]
         public string Image { get; set; }
+
+        //[ForeignKey("SkillType")]
+        //public virtual SkillType SkillTypeObject { get; set; }
+
+        //[ForeignKey("SkillCategory")]
+        //public virtual SkillCategory SkillCategoryObject { get; set; }
     }
 }
