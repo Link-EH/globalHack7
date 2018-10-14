@@ -10,8 +10,10 @@ namespace Website.Models
         [Display(Name = "Skill Id"), Key]
         public Guid SkillId { get; set; }
         [Display(Name = "Skill Name")]
-        public string SkillName { get; set; }
+        public string SkillsCategory { get; set; }
         [Display(Name = "Skill Type")]
         public string SkillType { get; set; }
+        [Display (Name = "Skill Image")]
+        public string Image { get; set; }
     }
 }
