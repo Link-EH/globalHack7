@@ -10,6 +10,7 @@ namespace Website.ViewModels
     {
         public Resume Resume { get; set; }
         public List<WorkExperience> WorkExperiences { get; set; }
-        public List<JobSkillInfo> JobSkillInfos { get; set; }
+        public List<SkillCategory> SkillCategories { get; set; }
+        public List<Guid> AquiredSkills { get; set; }
     }
 }
