@@ -36,8 +36,7 @@ namespace Website.Controllers
             {
                 return HttpNotFound();
             }
-            List<WorkExperience> workExperiences = db.WorkExperiences.Where(x => x.ResumeId == id).ToList();
-            workResults.WorkExperiences = workExperiences;
+            workResults.WorkExperiences = db.WorkExperiences.Where(x => x.ResumeId == id).ToList();
             return View(workResults);
         }
 
@@ -80,6 +79,28 @@ namespace Website.Controllers
             }
             List<WorkExperience> workExperiences = db.WorkExperiences.Where(x => x.ResumeId == id).ToList();
             workResults.WorkExperiences = workExperiences;
+            
+            //var query =
+            //  from c in db.SkillCategory
+            //  join rs in db.ResumeSkills on j.JobSkillId equals rs.SkillCategoryId
+            //  where rs.ResumeId == id
+            //  orderby j.SkillType, j.SkillCategory, j.JobSkillName
+            //  select new JobSkillInfo
+            //  {
+            //      JobSkillId = j.JobSkillId,
+            //      SkillType = j.SkillType,
+            //      SkillCategory = j.SkillCategory,
+            //      JobSkillName = j.JobSkillName,
+            //      Image = c.Image
+            //  };
+            //workResults.JobSkillInfos = query.ToList();
+
+            workResults.SkillCategories = db.SkillCategory.ToList();
+            workResults.AquiredSkills = (
+                from s in db.ResumeSkills
+                where s.ResumeId == id
+                select s.SkillCategoryId
+            ).ToList();
             return View(workResults);
         }
 

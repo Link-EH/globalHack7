@@ -13,5 +13,6 @@ namespace Website.Models
         public DbSet<Industry> Industries { get; set; }
         public DbSet<Ethnicity> Ethnicities { get; set; }
         public DbSet<Language> Languages { get; set; }
+        public DbSet<ResumeSkill> ResumeSkills { get; set; }
     }
 }
