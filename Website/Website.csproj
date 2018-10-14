@@ -221,6 +221,7 @@
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ResumeController.cs" />
+    <Compile Include="Controllers\TranslateResumeController.cs" />
     <Compile Include="Controllers\WorkExperienceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -284,6 +285,10 @@
     <Compile Include="Migrations\201810140100576_updated property signatures for langauge.cs" />
     <Compile Include="Migrations\201810140100576_updated property signatures for langauge.Designer.cs">
       <DependentUpon>201810140100576_updated property signatures for langauge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810140404167_added FKs to Resume.cs" />
+    <Compile Include="Migrations\201810140404167_added FKs to Resume.Designer.cs">
+      <DependentUpon>201810140404167_added FKs to Resume.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -415,6 +420,11 @@
     <Content Include="Views\BusinessProfile\Details.cshtml" />
     <Content Include="Views\BusinessProfile\Edit.cshtml" />
     <Content Include="Views\BusinessProfile\Index.cshtml" />
+    <Content Include="Views\TranslateResume\Create.cshtml" />
+    <Content Include="Views\TranslateResume\Delete.cshtml" />
+    <Content Include="Views\TranslateResume\Details.cshtml" />
+    <Content Include="Views\TranslateResume\Edit.cshtml" />
+    <Content Include="Views\TranslateResume\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -477,6 +487,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810140100576_updated property signatures for langauge.resx">
       <DependentUpon>201810140100576_updated property signatures for langauge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810140404167_added FKs to Resume.resx">
+      <DependentUpon>201810140404167_added FKs to Resume.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

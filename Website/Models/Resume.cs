@@ -34,6 +34,21 @@ namespace Website.Models
         [StringLength(70)]
         public string Email { get; set; }
 
+        [Display(Name ="Language Code")]
+        //[Required(ErrorMessage = "Language Required")]
+        [StringLength(5)]
+        public string LanguageCode { get; set; }
+
+        [Display(Name = "Orignal Resume")]
+        public Guid? OriginalResumeId { get; set; }
+
+        // Navigation
+
+        [ForeignKey("OriginalResumeId")]
+        public virtual Resume OriginalResume { get; set; }
+        [ForeignKey("LanguageCode")]
+        public virtual Language Language { get; set; }
+
         public virtual ICollection<WorkExperience> WorkExperiences { get; set; }
     }
 }
