@@ -56,7 +56,7 @@ namespace Website.Controllers
                 resume.ResumeId = Guid.NewGuid();
                 db.Resumes.Add(resume);
                 db.SaveChanges();
-                return RedirectToAction("Index",);
+                return RedirectToAction("Index");
             }
 
             return View(resume);
