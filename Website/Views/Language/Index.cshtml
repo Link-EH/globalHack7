@@ -15,10 +15,10 @@
             @Html.DisplayNameFor(model => model.LanguageCode)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.EnglishName)
+            @Html.DisplayNameFor(model => model.EnglishLanguageName)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.NativeLanguage)
+            @Html.DisplayNameFor(model => model.NativeLanguageName)
         </th>
         <th></th>
     </tr>
@@ -29,10 +29,10 @@
             @Html.DisplayFor(modelItem => item.LanguageCode)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.EnglishName)
+            @Html.DisplayFor(modelItem => item.EnglishLanguageName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.NativeLanguage)
+            @Html.DisplayFor(modelItem => item.NativeLanguageName)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id = item.LanguageCode }) |

@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+using System.Linq;
+using System.Web;
 
-namespace Website.Models
+namespace Website.ViewModels
 {
-    [Table("JobSkill")]
-    public class JobSkill
+    public class JobSkillInfo
     {
         [Display(Name = "Job Skill Id"), Key]
         public Guid JobSkillId { get; set; }
@@ -17,11 +18,5 @@ namespace Website.Models
         public string SkillCategory { get; set; }
         [Display(Name = "Skill Image")]
         public string Image { get; set; }
-
-        //[ForeignKey("SkillType")]
-        //public virtual SkillType SkillTypeObject { get; set; }
-
-        //[ForeignKey("SkillCategory")]
-        //public virtual SkillCategory SkillCategoryObject { get; set; }
     }
 }

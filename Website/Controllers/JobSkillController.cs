@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Website.Models;
+using Website.ViewModels;
 
 namespace Website.Controllers
 {
@@ -17,7 +18,20 @@ namespace Website.Controllers
         // GET: JobSkill
         public ActionResult Index()
         {
-            return View(db.JobSkill.ToList());
+            var query =
+                from j in db.JobSkill
+                join c in db.SkillCategory on j.SkillCategory equals c.SkillCategoryName
+                orderby j.SkillType, j.SkillCategory, j.JobSkillName
+                select new JobSkillInfo
+                {
+                    JobSkillId = j.JobSkillId,
+                    SkillType = j.SkillType,
+                    SkillCategory = j.SkillCategory,
+                    JobSkillName = j.JobSkillName,
+                    Image = c.Image
+                };
+
+            return View(query.ToList());
         }
 
         // GET: JobSkill/Details/5
