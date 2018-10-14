@@ -1,4 +1,4 @@
-namespace Website.Migrations
+﻿namespace Website.Migrations
 {
     using System;
     using System.Data.Entity;
@@ -318,7 +318,7 @@ namespace Website.Migrations
                 SkillCategory = "Engineering",
                 JobSkillName = "Civil Engineering"
             });
-
+             // Industry Table
             context.Industries.AddOrUpdate(new Industry
             {
                 IndustryId = Guid.Parse("c2681640-cae7-425f-a48c-f2e7a1e2b3b9"),
@@ -337,6 +337,46 @@ namespace Website.Migrations
                 IndustryName = "Food"
             });
 
+            // Ethnicity Table
+            context.Ethnicities.AddOrUpdate(new Ethnicity
+            {
+                EthnicityId = Guid.Parse("766bb369-67ae-4a07-872b-6bbe9357c436"),
+                EthnicityName = "Asian"
+            });
+
+            context.Ethnicities.AddOrUpdate(new Ethnicity
+            {
+                EthnicityId = Guid.Parse("ed7de62d-5c0b-43fc-b44a-b9ade6b8d78f"),
+                EthnicityName = "Mexican"
+            });
+
+            context.Ethnicities.AddOrUpdate(new Ethnicity
+            {
+                EthnicityId = Guid.Parse("73bf3014-7c41-496e-bdcb-e19f6e634a89"),
+                EthnicityName = "White"
+            });
+
+            // Language Table
+            context.Languages.AddOrUpdate(new Language
+            {
+                LanguageCode = "en",
+                EnglishLanguageName = "English",
+                NativeLanguageName = "English"
+            });
+
+            context.Languages.AddOrUpdate(new Language
+            {
+                LanguageCode = "de",
+                EnglishLanguageName = "German",
+                NativeLanguageName = "Deutsch"
+            });
+
+            context.Languages.AddOrUpdate(new Language
+            {
+                LanguageCode = "ru",
+                EnglishLanguageName = "Russian",
+                NativeLanguageName = "русский язык"
+            });
         }
     }
 }
