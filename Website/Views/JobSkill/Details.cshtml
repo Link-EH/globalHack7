@@ -4,38 +4,40 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<div class="main-container-wrap">
+    <h2>@ViewBag.Title</h2>
 
-<div>
-    <h4>JobSkill</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.SkillType)
-        </dt>
+    <div>
+        <h4>JobSkill</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.SkillType)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SkillType)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.SkillType)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.SkillCategory)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.SkillCategory)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.SkillCategory)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.SkillCategory)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.JobSkillName)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.JobSkillName)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.JobSkillName)
-        </dd>
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.JobSkillName)
+            </dd>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.JobSkillId }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.JobSkillId }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
