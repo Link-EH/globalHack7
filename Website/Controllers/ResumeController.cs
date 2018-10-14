@@ -17,7 +17,7 @@ namespace Website.Controllers
         private EmploymentDatabase db = new EmploymentDatabase();
 
         // GET: Resume
-        [Authorize(Roles = "Admin, Translator")]
+        [Authorize(Roles = "Admin,Translator")]
         public ActionResult Index()
         {
             return View(db.Resumes.ToList());
