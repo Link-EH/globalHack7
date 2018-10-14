@@ -10,6 +10,7 @@ using Website.Models;
 
 namespace Website.Controllers
 {
+    [Authorize(Roles = "Admin")]
     public class LanguageController : Controller
     {
         private EmploymentDatabase db = new EmploymentDatabase();

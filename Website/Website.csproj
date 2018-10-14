@@ -223,6 +223,7 @@
     <Compile Include="Controllers\LanguageController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\ResumeController.cs" />
+    <Compile Include="Controllers\TranslateResumeController.cs" />
     <Compile Include="Controllers\WorkExperienceController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -294,6 +295,10 @@
     <Compile Include="Migrations\201810140404013_Changed Resume Skills.cs" />
     <Compile Include="Migrations\201810140404013_Changed Resume Skills.Designer.cs">
       <DependentUpon>201810140404013_Changed Resume Skills.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201810140404167_added FKs to Resume.cs" />
+    <Compile Include="Migrations\201810140404167_added FKs to Resume.Designer.cs">
+      <DependentUpon>201810140404167_added FKs to Resume.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -485,6 +490,11 @@
     <Content Include="Views\BusinessProfile\Details.cshtml" />
     <Content Include="Views\BusinessProfile\Edit.cshtml" />
     <Content Include="Views\BusinessProfile\Index.cshtml" />
+    <Content Include="Views\TranslateResume\Create.cshtml" />
+    <Content Include="Views\TranslateResume\Delete.cshtml" />
+    <Content Include="Views\TranslateResume\Details.cshtml" />
+    <Content Include="Views\TranslateResume\Edit.cshtml" />
+    <Content Include="Views\TranslateResume\Index.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper-utils.min.js.map" />
@@ -554,6 +564,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201810140404013_Changed Resume Skills.resx">
       <DependentUpon>201810140404013_Changed Resume Skills.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201810140404167_added FKs to Resume.resx">
+      <DependentUpon>201810140404167_added FKs to Resume.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

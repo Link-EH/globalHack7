@@ -7,46 +7,53 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Website.Models;
-using Website.ViewModels;
 
 namespace Website.Controllers
 {
-    [Authorize]
-    public class ResumeController : Controller
+    public class TranslateResumeController : Controller
     {
         private EmploymentDatabase db = new EmploymentDatabase();
 
-        // GET: Resume
-        [Authorize(Roles = "Admin, Translator")]
-        public ActionResult Index()
-        {
-            return View(db.Resumes.ToList());
-        }
+        // GET: TranslateResume
+        //public ActionResult Index()
+        //{
+        //    return View(db.Resumes.ToList());
+        //}
 
-        // GET: Resume/Details/5
-        public ActionResult Details(Guid? id)
+        // GET: TranslateResume/Details/5
+        //public ActionResult Details(Guid? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Resume resume = db.Resumes.Find(id);
+        //    if (resume == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(resume);
+        //}
+
+        // GET: TranslateResume/Create
+        public ActionResult Create(Guid originalResumeId)
         {
-            if (id == null)
+            Resume originalResume = db.Resumes.Find(originalResumeId);
+            Resume newResume = new Resume()
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            WorkResults workResults = new WorkResults();
-            workResults.Resume = db.Resumes.Find(id);
-            if (workResults.Resume == null)
-            {
-                return HttpNotFound();
-            }
-            workResults.WorkExperiences = db.WorkExperiences.Where(x => x.ResumeId == id).ToList();
-            return View(workResults);
+                OriginalResumeId = originalResumeId,
+                OriginalResume = originalResume,
+                FirstName = originalResume.FirstName,
+                LastName = originalResume.LastName,
+                PhoneNumber = originalResume.PhoneNumber,
+                Email = originalResume.Email,
+            };
+
+
+            return View(newResume);
         }
 
-        // GET: Resume/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: Resume/Create
+        // POST: TranslateResume/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -64,47 +71,22 @@ namespace Website.Controllers
             return View(resume);
         }
 
-        // GET: Resume/Edit/5
+        // GET: TranslateResume/Edit/5
         public ActionResult Edit(Guid? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            WorkResults workResults = new WorkResults();
-            workResults.Resume = db.Resumes.Find(id);
-            if (workResults.Resume == null)
+            Resume resume = db.Resumes.Find(id);
+            if (resume == null)
             {
                 return HttpNotFound();
             }
-            List<WorkExperience> workExperiences = db.WorkExperiences.Where(x => x.ResumeId == id).ToList();
-            workResults.WorkExperiences = workExperiences;
-            
-            //var query =
-            //  from c in db.SkillCategory
-            //  join rs in db.ResumeSkills on j.JobSkillId equals rs.SkillCategoryId
-            //  where rs.ResumeId == id
-            //  orderby j.SkillType, j.SkillCategory, j.JobSkillName
-            //  select new JobSkillInfo
-            //  {
-            //      JobSkillId = j.JobSkillId,
-            //      SkillType = j.SkillType,
-            //      SkillCategory = j.SkillCategory,
-            //      JobSkillName = j.JobSkillName,
-            //      Image = c.Image
-            //  };
-            //workResults.JobSkillInfos = query.ToList();
-
-            workResults.SkillCategories = db.SkillCategory.ToList();
-            workResults.AquiredSkills = (
-                from s in db.ResumeSkills
-                where s.ResumeId == id
-                select s.SkillCategoryId
-            ).ToList();
-            return View(workResults);
+            return View(resume);
         }
 
-        // POST: Resume/Edit/5
+        // POST: TranslateResume/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -120,7 +102,7 @@ namespace Website.Controllers
             return View(resume);
         }
 
-        // GET: Resume/Delete/5
+        // GET: TranslateResume/Delete/5
         public ActionResult Delete(Guid? id)
         {
             if (id == null)
@@ -135,7 +117,7 @@ namespace Website.Controllers
             return View(resume);
         }
 
-        // POST: Resume/Delete/5
+        // POST: TranslateResume/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(Guid id)
