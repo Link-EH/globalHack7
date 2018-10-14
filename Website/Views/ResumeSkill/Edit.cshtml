@@ -1,4 +1,4 @@
-﻿@model IList<Website.Models.SkillCategory>
+﻿@model IList<Website.ViewModels.JobSkillInfo>
 @{
     ViewBag.Title = "Resume Skills";
 }
@@ -6,23 +6,31 @@
 <h2>@ViewBag.Title</h2>
 @using (Html.BeginForm("Edit", "ResumeSkill", FormMethod.Post))
 {
-    for(int i = 0; i < Model.Count; ++i)
+    @Html.Hidden("resumeId", (object)ViewBag.ResumeId)
+
+    for (int i = 0; i < Model.Count; ++i)
     {
-    <div class="card col-2" style="display: inline-flex;">
-       <label for="Skill@(i)">
-        <div class="card-header">
-            @if (!string.IsNullOrWhiteSpace(Model[i].Image))
-            {
-                
-                    <img src="~/Content/SkillImages/@Model[i].Image" height="70" width="70" />
-            }
+        <div class="card col-2" style="display: inline-flex;">
+            <label>
+                <div class="card-header">
+                    @if (!string.IsNullOrWhiteSpace(Model[i].Image))
+                    {
+
+                        <img src="~/Content/SkillImages/@Model[i].Image" height="70" width="70" />
+                    }
+                </div>
+                <div class="card-body">
+                    @Html.HiddenFor(m => Model[i].JobSkillId)
+                    @Html.HiddenFor(m => Model[i].SkillType)
+                    @Html.HiddenFor(m => Model[i].SkillCategory)
+                    @Html.HiddenFor(m => Model[i].Image)
+                    @Html.CheckBoxFor(m => Model[i].Checked)
+                    @Model[i].SkillCategory
+                </div>
+            </label>
         </div>
-        <div class="card-body">
-            <input type="checkbox" name="Skill@(i)" /> @Model[i].SkillCategoryName
-        </div>
-       </label>
-    </div>
     }
+    <input type="submit" value="Submit" />
 }
 
 

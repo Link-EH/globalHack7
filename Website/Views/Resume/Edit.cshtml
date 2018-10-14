@@ -95,7 +95,8 @@
 
                     }
                 </table>
-                @Html.ActionLink("Add Work Experience", "Create", "WorkExperience", new { resumeId = Model.Resume.ResumeId.ToString() }, null)
+                @Html.ActionLink("Add Skill", "Edit", "ResumeSkill", new { resumeId = Model.Resume.ResumeId.ToString() }, null)
+                <br />@Html.ActionLink("Add Work Experience", "Create", "WorkExperience", new { resumeId = Model.Resume.ResumeId.ToString() }, null)
             </div>
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">

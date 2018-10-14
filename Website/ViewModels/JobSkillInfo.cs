@@ -18,5 +18,7 @@ namespace Website.ViewModels
         public string SkillCategory { get; set; }
         [Display(Name = "Skill Image")]
         public string Image { get; set; }
+
+        public bool Checked { get; set; }
     }
 }
