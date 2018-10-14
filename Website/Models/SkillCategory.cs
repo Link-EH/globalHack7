@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -15,5 +16,11 @@ namespace Website.Models
         public string SkillType { get; set; }
         [Display (Name = "Skill Image")]
         public string Image { get; set; }
+
+        //[ForeignKey("SkillType")]
+        //public virtual SkillType SkillTypeObject { get; set; }
+
+        //[ForeignKey("SkillCategory")]
+        //public ICollection<JobSkill> JobSkills { get; set; }
     }
 }
